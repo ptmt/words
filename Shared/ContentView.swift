@@ -8,6 +8,14 @@
 import SwiftUI
 import CoreData
 
+struct Sidebar: View {
+    var body: some View {
+        VStack {
+            Text("test")
+            Text("test")
+        }
+    }
+}
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -17,7 +25,28 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
-        HintedText()
+        NavigationView {
+            #if os(macOS)
+            Sidebar()
+            #endif
+            #if os(iOS)
+            TabView {
+                list
+                    .navigationTitle(Text("List"))
+                    .tabItem {
+                    Image(systemName: "phone.fill")
+                    Text("First Tab")
+                  }
+            }
+            #endif
+            #if os(macOS)
+            list
+            #endif
+            WrappedLayout(tokens: tokenize(demoText2))
+                .toolbar {
+                    
+                }
+            }
     }
     
     var list: some View {

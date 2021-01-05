@@ -27,6 +27,9 @@
 		241C783725A244AF00968D25 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C783525A244AF00968D25 /* Tokenizer.swift */; };
 		241C783825A244AF00968D25 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C783525A244AF00968D25 /* Tokenizer.swift */; };
 		241C784125A244C100968D25 /* TestTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C782E25A2434D00968D25 /* TestTokenizer.swift */; };
+		241C784B25A3252300968D25 /* Tagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C784A25A3252300968D25 /* Tagger.swift */; };
+		241C784C25A3252300968D25 /* Tagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C784A25A3252300968D25 /* Tagger.swift */; };
+		241C784D25A3252300968D25 /* Tagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C784A25A3252300968D25 /* Tagger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,7 @@
 		241C782725A23E1D00968D25 /* WrappedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedLayout.swift; sourceTree = "<group>"; };
 		241C782E25A2434D00968D25 /* TestTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTokenizer.swift; sourceTree = "<group>"; };
 		241C783525A244AF00968D25 /* Tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
+		241C784A25A3252300968D25 /* Tagger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				241C783525A244AF00968D25 /* Tokenizer.swift */,
+				241C784A25A3252300968D25 /* Tagger.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				241C77D1259F9A3100968D25 /* words.xcdatamodeld in Sources */,
+				241C784B25A3252300968D25 /* Tagger.swift in Sources */,
 				241C77D7259F9A3100968D25 /* Persistence.swift in Sources */,
 				241C781D25A239F800968D25 /* HintedText.swift in Sources */,
 				241C783625A244AF00968D25 /* Tokenizer.swift in Sources */,
@@ -363,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				241C77D2259F9A3100968D25 /* words.xcdatamodeld in Sources */,
+				241C784C25A3252300968D25 /* Tagger.swift in Sources */,
 				241C77D8259F9A3100968D25 /* Persistence.swift in Sources */,
 				241C781E25A239F800968D25 /* HintedText.swift in Sources */,
 				241C783725A244AF00968D25 /* Tokenizer.swift in Sources */,
@@ -385,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				241C77CF259F9A3100968D25 /* Tests_macOS.swift in Sources */,
+				241C784D25A3252300968D25 /* Tagger.swift in Sources */,
 				241C784125A244C100968D25 /* TestTokenizer.swift in Sources */,
 				241C783825A244AF00968D25 /* Tokenizer.swift in Sources */,
 			);
