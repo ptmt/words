@@ -30,6 +30,12 @@
 		241C784B25A3252300968D25 /* Tagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C784A25A3252300968D25 /* Tagger.swift */; };
 		241C784C25A3252300968D25 /* Tagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C784A25A3252300968D25 /* Tagger.swift */; };
 		241C784D25A3252300968D25 /* Tagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C784A25A3252300968D25 /* Tagger.swift */; };
+		241C785A25A5B3DD00968D25 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C785925A5B3DD00968D25 /* Sidebar.swift */; };
+		241C785B25A5B3DD00968D25 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C785925A5B3DD00968D25 /* Sidebar.swift */; };
+		241C786125A5B42500968D25 /* TextList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C786025A5B42500968D25 /* TextList.swift */; };
+		241C786225A5B42500968D25 /* TextList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C786025A5B42500968D25 /* TextList.swift */; };
+		2430840C25A9C3B600B0035B /* NavigationDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430840B25A9C3B600B0035B /* NavigationDispatcher.swift */; };
+		2430840D25A9C3B600B0035B /* NavigationDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430840B25A9C3B600B0035B /* NavigationDispatcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +77,9 @@
 		241C782E25A2434D00968D25 /* TestTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTokenizer.swift; sourceTree = "<group>"; };
 		241C783525A244AF00968D25 /* Tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
 		241C784A25A3252300968D25 /* Tagger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagger.swift; sourceTree = "<group>"; };
+		241C785925A5B3DD00968D25 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
+		241C786025A5B42500968D25 /* TextList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextList.swift; sourceTree = "<group>"; };
+		2430840B25A9C3B600B0035B /* NavigationDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDispatcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +129,11 @@
 		241C77A4259F9A3000968D25 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2430844825AAF6DF00B0035B /* CoreData */,
 				241C783425A2448B00968D25 /* Text */,
 				241C781B25A2399400968D25 /* Views */,
 				241C77A7259F9A3000968D25 /* WordsApp.swift */,
 				241C77A8259F9A3000968D25 /* ContentView.swift */,
-				241C77A9259F9A3000968D25 /* Persistence.swift */,
 				241C77AA259F9A3100968D25 /* Assets.xcassets */,
 				241C77A5259F9A3000968D25 /* words.xcdatamodeld */,
 			);
@@ -183,6 +192,9 @@
 			children = (
 				241C781C25A239F800968D25 /* HintedText.swift */,
 				241C782725A23E1D00968D25 /* WrappedLayout.swift */,
+				241C785925A5B3DD00968D25 /* Sidebar.swift */,
+				241C786025A5B42500968D25 /* TextList.swift */,
+				2430840B25A9C3B600B0035B /* NavigationDispatcher.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,6 +206,14 @@
 				241C784A25A3252300968D25 /* Tagger.swift */,
 			);
 			path = Text;
+			sourceTree = "<group>";
+		};
+		2430844825AAF6DF00B0035B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				241C77A9259F9A3000968D25 /* Persistence.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,11 +375,14 @@
 			files = (
 				241C77D1259F9A3100968D25 /* words.xcdatamodeld in Sources */,
 				241C784B25A3252300968D25 /* Tagger.swift in Sources */,
+				241C786125A5B42500968D25 /* TextList.swift in Sources */,
 				241C77D7259F9A3100968D25 /* Persistence.swift in Sources */,
 				241C781D25A239F800968D25 /* HintedText.swift in Sources */,
+				2430840C25A9C3B600B0035B /* NavigationDispatcher.swift in Sources */,
 				241C783625A244AF00968D25 /* Tokenizer.swift in Sources */,
 				241C77D3259F9A3100968D25 /* WordsApp.swift in Sources */,
 				241C77D5259F9A3100968D25 /* ContentView.swift in Sources */,
+				241C785A25A5B3DD00968D25 /* Sidebar.swift in Sources */,
 				241C782825A23E1D00968D25 /* WrappedLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,11 +393,14 @@
 			files = (
 				241C77D2259F9A3100968D25 /* words.xcdatamodeld in Sources */,
 				241C784C25A3252300968D25 /* Tagger.swift in Sources */,
+				241C786225A5B42500968D25 /* TextList.swift in Sources */,
 				241C77D8259F9A3100968D25 /* Persistence.swift in Sources */,
 				241C781E25A239F800968D25 /* HintedText.swift in Sources */,
+				2430840D25A9C3B600B0035B /* NavigationDispatcher.swift in Sources */,
 				241C783725A244AF00968D25 /* Tokenizer.swift in Sources */,
 				241C77D4259F9A3100968D25 /* WordsApp.swift in Sources */,
 				241C77D6259F9A3100968D25 /* ContentView.swift in Sources */,
+				241C785B25A5B3DD00968D25 /* Sidebar.swift in Sources */,
 				241C782925A23E1D00968D25 /* WrappedLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

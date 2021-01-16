@@ -68,7 +68,7 @@ struct HoverableToken: View {
     @State private var selected: Bool = false
     var body: some View {
         Text(token)
-            .font(.system(size : 19))
+            .font(.system(size: 15))
             .background(selected ? Color.secondary : Color.clear)
             .onHover {
             hovered = $0

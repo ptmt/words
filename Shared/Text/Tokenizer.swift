@@ -32,11 +32,11 @@ public func tokenize(_ text: String) -> [Token] {
     var tokens: [Token] = []
     var i = text.unicodeScalars.startIndex
     
-    tokenizer.enumerateTokens(in: text.startIndex..<text.endIndex) { tokenRange, attr in
+    tokenizer.enumerateTokens(in: text.startIndex..<text.endIndex) { tokenRange, _ in
         if (tokenRange.lowerBound > i) {
             tokens.append(.separator(String(text[i..<tokenRange.lowerBound])))
         }
-        print(text[tokenRange], attr)
+        print(text[tokenRange])
         tokens.append(.word(String(text[tokenRange])))
         i = tokenRange.upperBound
         return true

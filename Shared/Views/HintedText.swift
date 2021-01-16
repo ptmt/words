@@ -9,16 +9,43 @@ import Foundation
 import SwiftUI
 
 struct HintedText: View {
+    @State var title: String
+    var updatedAt: String
+    @State var text: String
+    @State var isEditing: Bool = false
+    
     var body: some View {
-        
-            Text("empty")
-//        } else {
-//        LazyHStack(alignment: VerticalAlignment.firstTextBaseline) {
-//            ForEach(0...tokens.count, id: \.self) { i in
-//                Text(tokens[i])
-//                }
-//        }
-//        }
+        HStack {
+            VStack(alignment: .leading) {
+                if (isEditing) {
+                    TextField("Title", text: $title).font(.largeTitle).padding(.vertical, 4)
+                    TextEditor(text: $text).font(.system(size: 15))
+                } else {
+                    Text(title).font(.largeTitle).padding(.vertical, 4)
+                    Text(updatedAt).foregroundColor(.secondary)
+                    WrappedLayout(tokens: tokenize(text))
+                }
+            }
+            .padding()
+            .background(Color.white)
+            .cornerRadius(14.0)
+        }
+        .padding(30)
+        // .background(Color.gray)
+        .toolbar {
+            if (isEditing) {
+                Button("Save") {
+                    isEditing = true
+                }
+            } else {
+                Button("Edit") {
+                    isEditing = true
+                }
+                Button("Delete") {
+                    isEditing = true
+                }
+            }
+        }
     }
 }
 
@@ -35,6 +62,14 @@ let demoText2 = """
 
 struct HintedText_Previews: PreviewProvider {
     static var previews: some View {
-        HintedText()
+        Group {
+            HintedText(title: "Spiegel: Tweet",
+                       updatedAt: "just now",
+                       text: demoText2)
+            HintedText(title: "Spiegel: Tweet",
+                       updatedAt: "just now",
+                       text: demoText2,
+                       isEditing: true)
+        }.padding().background(Color.gray)
     }
 }
