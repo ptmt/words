@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="WText" representedClassName="WText" syncable="YES" codeGenerationType="class">
-        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="content" attributeType="String" defaultValueString=""/>
         <attribute name="createdAt" attributeType="Date" defaultDateTimeInterval="631960740" usesScalarValueType="NO"/>
         <attribute name="icon" optional="YES" attributeType="URI"/>
         <attribute name="link" optional="YES" attributeType="URI"/>
-        <attribute name="title" attributeType="String" defaultValueString="No title"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" attributeType="Date" defaultDateTimeInterval="631960740" usesScalarValueType="NO"/>
         <relationship name="words" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WWord" inverseName="texts" inverseEntity="WWord"/>
     </entity>
     <entity name="WWord" representedClassName="WWord" syncable="YES" codeGenerationType="class">
         <attribute name="addedAt" attributeType="Date" defaultDateTimeInterval="631960800" usesScalarValueType="NO"/>
         <attribute name="hint" optional="YES" attributeType="String"/>
+        <attribute name="lastLearnedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="lemma" optional="YES" attributeType="String"/>
         <attribute name="original" optional="YES" attributeType="String"/>
         <relationship name="texts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WText" inverseName="words" inverseEntity="WText"/>
     </entity>
     <elements>
         <element name="WText" positionX="-63" positionY="-9" width="128" height="134"/>
-        <element name="WWord" positionX="-54" positionY="0" width="128" height="104"/>
+        <element name="WWord" positionX="-54" positionY="0" width="128" height="119"/>
     </elements>
 </model>

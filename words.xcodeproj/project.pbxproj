@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2415830B25B30DB8008A0675 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415830A25B30DB8008A0675 /* Color.swift */; };
+		2415830C25B30DB8008A0675 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415830A25B30DB8008A0675 /* Color.swift */; };
+		2415831725B30E70008A0675 /* WText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415831625B30E70008A0675 /* WText.swift */; };
+		2415831825B30E70008A0675 /* WText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415831625B30E70008A0675 /* WText.swift */; };
+		2415831E25B30E92008A0675 /* TextListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415831D25B30E92008A0675 /* TextListViewModel.swift */; };
+		2415831F25B30E92008A0675 /* TextListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415831D25B30E92008A0675 /* TextListViewModel.swift */; };
+		2415832525B30EB0008A0675 /* TextListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415832425B30EB0008A0675 /* TextListRow.swift */; };
+		2415832625B30EB0008A0675 /* TextListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415832425B30EB0008A0675 /* TextListRow.swift */; };
 		241C77C4259F9A3100968D25 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C77C3259F9A3100968D25 /* Tests_iOS.swift */; };
 		241C77CF259F9A3100968D25 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C77CE259F9A3100968D25 /* Tests_macOS.swift */; };
 		241C77D1259F9A3100968D25 /* words.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 241C77A5259F9A3000968D25 /* words.xcdatamodeld */; };
@@ -36,6 +44,7 @@
 		241C786225A5B42500968D25 /* TextList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C786025A5B42500968D25 /* TextList.swift */; };
 		2430840C25A9C3B600B0035B /* NavigationDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430840B25A9C3B600B0035B /* NavigationDispatcher.swift */; };
 		2430840D25A9C3B600B0035B /* NavigationDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430840B25A9C3B600B0035B /* NavigationDispatcher.swift */; };
+		249D9E0B25B302E3000F3748 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249D9E0A25B302E3000F3748 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2415830A25B30DB8008A0675 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		2415831625B30E70008A0675 /* WText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WText.swift; sourceTree = "<group>"; };
+		2415831D25B30E92008A0675 /* TextListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextListViewModel.swift; sourceTree = "<group>"; };
+		2415832425B30EB0008A0675 /* TextListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextListRow.swift; sourceTree = "<group>"; };
 		241C77A6259F9A3000968D25 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		241C77A7259F9A3000968D25 /* WordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsApp.swift; sourceTree = "<group>"; };
 		241C77A8259F9A3000968D25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +93,7 @@
 		241C785925A5B3DD00968D25 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		241C786025A5B42500968D25 /* TextList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextList.swift; sourceTree = "<group>"; };
 		2430840B25A9C3B600B0035B /* NavigationDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDispatcher.swift; sourceTree = "<group>"; };
+		249D9E0A25B302E3000F3748 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249D9E0B25B302E3000F3748 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +129,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2415830925B30DAB008A0675 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2415830A25B30DB8008A0675 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2415831525B30E50008A0675 /* TextList */ = {
+			isa = PBXGroup;
+			children = (
+				241C782725A23E1D00968D25 /* WrappedLayout.swift */,
+				241C781C25A239F800968D25 /* HintedText.swift */,
+				241C786025A5B42500968D25 /* TextList.swift */,
+				2415831625B30E70008A0675 /* WText.swift */,
+				2415831D25B30E92008A0675 /* TextListViewModel.swift */,
+				2415832425B30EB0008A0675 /* TextListRow.swift */,
+			);
+			path = TextList;
+			sourceTree = "<group>";
+		};
 		241C779F259F9A3000968D25 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +159,7 @@
 				241C77C2259F9A3100968D25 /* Tests iOS */,
 				241C77CD259F9A3100968D25 /* Tests macOS */,
 				241C77B0259F9A3100968D25 /* Products */,
+				249D9E0925B302E2000F3748 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,10 +227,9 @@
 		241C781B25A2399400968D25 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				241C781C25A239F800968D25 /* HintedText.swift */,
-				241C782725A23E1D00968D25 /* WrappedLayout.swift */,
+				2415831525B30E50008A0675 /* TextList */,
+				2415830925B30DAB008A0675 /* Extensions */,
 				241C785925A5B3DD00968D25 /* Sidebar.swift */,
-				241C786025A5B42500968D25 /* TextList.swift */,
 				2430840B25A9C3B600B0035B /* NavigationDispatcher.swift */,
 			);
 			path = Views;
@@ -214,6 +250,14 @@
 				241C77A9259F9A3000968D25 /* Persistence.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		249D9E0925B302E2000F3748 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				249D9E0A25B302E3000F3748 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,17 +417,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2415831725B30E70008A0675 /* WText.swift in Sources */,
+				2415831E25B30E92008A0675 /* TextListViewModel.swift in Sources */,
 				241C77D1259F9A3100968D25 /* words.xcdatamodeld in Sources */,
 				241C784B25A3252300968D25 /* Tagger.swift in Sources */,
 				241C786125A5B42500968D25 /* TextList.swift in Sources */,
 				241C77D7259F9A3100968D25 /* Persistence.swift in Sources */,
 				241C781D25A239F800968D25 /* HintedText.swift in Sources */,
+				2415830B25B30DB8008A0675 /* Color.swift in Sources */,
 				2430840C25A9C3B600B0035B /* NavigationDispatcher.swift in Sources */,
 				241C783625A244AF00968D25 /* Tokenizer.swift in Sources */,
 				241C77D3259F9A3100968D25 /* WordsApp.swift in Sources */,
 				241C77D5259F9A3100968D25 /* ContentView.swift in Sources */,
 				241C785A25A5B3DD00968D25 /* Sidebar.swift in Sources */,
 				241C782825A23E1D00968D25 /* WrappedLayout.swift in Sources */,
+				2415832525B30EB0008A0675 /* TextListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,17 +439,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2415831825B30E70008A0675 /* WText.swift in Sources */,
+				2415831F25B30E92008A0675 /* TextListViewModel.swift in Sources */,
 				241C77D2259F9A3100968D25 /* words.xcdatamodeld in Sources */,
 				241C784C25A3252300968D25 /* Tagger.swift in Sources */,
 				241C786225A5B42500968D25 /* TextList.swift in Sources */,
 				241C77D8259F9A3100968D25 /* Persistence.swift in Sources */,
 				241C781E25A239F800968D25 /* HintedText.swift in Sources */,
+				2415830C25B30DB8008A0675 /* Color.swift in Sources */,
 				2430840D25A9C3B600B0035B /* NavigationDispatcher.swift in Sources */,
 				241C783725A244AF00968D25 /* Tokenizer.swift in Sources */,
 				241C77D4259F9A3100968D25 /* WordsApp.swift in Sources */,
 				241C77D6259F9A3100968D25 /* ContentView.swift in Sources */,
 				241C785B25A5B3DD00968D25 /* Sidebar.swift in Sources */,
 				241C782925A23E1D00968D25 /* WrappedLayout.swift in Sources */,
+				2415832625B30EB0008A0675 /* TextListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

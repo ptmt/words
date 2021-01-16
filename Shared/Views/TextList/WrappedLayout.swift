@@ -21,33 +21,35 @@ struct WrappedLayout: View {
     private func generateContent(in g: GeometryProxy) -> some View {
         var width = CGFloat.zero
         var height = CGFloat.zero
-        
+       
         return ZStack(alignment: .topLeading) {
-            ForEach(0...tokens.count - 1, id: \.self) { i in
-                let token = self.tokens[i]
-                self.item(for: token)
-                    .padding([.vertical], 12)
-                    .alignmentGuide(.leading, computeValue: { d in
-                        if (abs(width - d.width) > g.size.width)
-                        {
-                            width = 0
-                            height -= d.height
-                        }
-                        let result = width
-                        if i == self.tokens.count - 1 {
-                            width = 0 //last item
-                        } else {
-                            width -= d.width
-                        }
-                        return result
-                    })
-                    .alignmentGuide(.top, computeValue: {d in
-                        let result = height
-                        if i == self.tokens.count - 1 {
-                            height = 0 // last item
-                        }
-                        return result
-                    })
+            if tokens.count > 0 {
+                ForEach(0...tokens.count - 1, id: \.self) { i in
+                    let token = self.tokens[i]
+                    self.item(for: token)
+                        .padding([.vertical], 12)
+                        .alignmentGuide(.leading, computeValue: { d in
+                            if (abs(width - d.width) > g.size.width)
+                            {
+                                width = 0
+                                height -= d.height
+                            }
+                            let result = width
+                            if i == self.tokens.count - 1 {
+                                width = 0 //last item
+                            } else {
+                                width -= d.width
+                            }
+                            return result
+                        })
+                        .alignmentGuide(.top, computeValue: {d in
+                            let result = height
+                            if i == self.tokens.count - 1 {
+                                height = 0 // last item
+                            }
+                            return result
+                        })
+                }
             }
         }
     }

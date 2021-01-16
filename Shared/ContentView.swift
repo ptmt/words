@@ -19,33 +19,41 @@ struct ContentView: View {
     
     @State private var selectedTab = Tab.texts
     
-    var body: some View {
-        NavigationView {
-            #if os(macOS)
-            Sidebar()
-            #endif
-            #if os(iOS)
-            TabView {
-                list
-                    .navigationTitle(Text("List"))
-                    .tabItem {
-                        Image(systemName: "phone.fill")
-                        Text("First Tab")
-                    }
+    var iosBody: some View {
+        TabView {
+            NavigationView {
+                NavigationDispatcher(item: .texts)
+                    .navigationTitle(Text("Texts"))
+                    
+            }.tabItem {
+                Image(systemName: "house")
+                Text("Texts")
             }
-            #endif
-            #if os(macOS)
+            NavigationView {
+                NavigationDispatcher(item: .words)
+                    .navigationTitle(Text("Texts"))
+            }.tabItem {
+                Image(systemName: "textformat.abc")
+                Text("Words")
+            }
+        }
+    }
+    
+    var macOsBody: some View {
+        NavigationView {
+            Sidebar()
             empty
-            #endif
             empty2
         }
     }
     
-    var words: some View {
-        VStack {
-            Text("word 1")
-            Text("word 2")
-        }
+    var body: some View {
+        #if os(macOS)
+        macOsBody
+        #endif
+        #if os(iOS)
+        iosBody
+        #endif
     }
     
     var empty: some View {
