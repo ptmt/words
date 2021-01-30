@@ -71,7 +71,7 @@ struct HoverableToken: View {
     var body: some View {
         Text(token)
             .font(.system(size: 15))
-            .background(selected ? Color.secondary : Color.clear)
+            .background(selected ? Color.secondaryBackground : Color.clear)
             .onHover {
             hovered = $0
             }.onTapGesture {

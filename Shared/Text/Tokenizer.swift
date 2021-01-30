@@ -36,7 +36,6 @@ public func tokenize(_ text: String) -> [Token] {
         if (tokenRange.lowerBound > i) {
             tokens.append(.separator(String(text[i..<tokenRange.lowerBound])))
         }
-        print(text[tokenRange])
         tokens.append(.word(String(text[tokenRange])))
         i = tokenRange.upperBound
         return true

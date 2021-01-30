@@ -21,8 +21,10 @@ struct TextRowView: View {
                     Text(link.absoluteString).foregroundColor(.secondary)
                 }
             }
-            Text(text.content?.prefix(100) ?? "")
+            Text(text.content?.prefix(100) ?? "").lineLimit(1)
         }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 4)
     }
 }
 
@@ -30,7 +32,7 @@ struct TextRowView: View {
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .short
-    formatter.timeStyle = .none
+    formatter.timeStyle = .short
     return formatter
 }()
 

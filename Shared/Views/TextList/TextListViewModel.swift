@@ -16,6 +16,7 @@ extension TextList {
         
         @Published var texts: [WText] = []
         @Published var selected: NSManagedObjectID? = nil
+        @Published var refreshingID = UUID()
         
         private let fetchController: NSFetchedResultsController<WText>
         
@@ -40,14 +41,15 @@ extension TextList {
         }
         
         func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-            guard let todoItems = controller.fetchedObjects as? [WText]
-            else { return }
             
-            texts = todoItems
+            guard let items = controller.fetchedObjects as? [WText]
+            else { return }
+            print("controller did change content", items)
+            texts = items
+            refreshingID = UUID()
         }
         
         func addItem() {
-            print("addItem")
             withAnimation {
                 let newItem = WText(context: viewContext)
                 newItem.createdAt = Date()
@@ -65,23 +67,39 @@ extension TextList {
             }
         }
         
-        func editItem(id: NSManagedObjectID, title: String, text: String) {
-            print("editItem", id, title, text)
+        func editItem(item: WText, title: String, text: String) {
+            print("editItem", title, text)
             
-            let newItem = WText(context: viewContext)
-            newItem.createdAt = Date()
-            newItem.updatedAt = Date()
-            newItem.content = ""
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            withAnimation {
+                item.title = title
+                item.content = text
+                item.updatedAt = Date()
+                
+                do {
+                    try viewContext.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nsError = error as NSError
+                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                }
             }
            
+        }
+        
+        func deleteItem(item: WText) {
+            withAnimation {
+                viewContext.delete(item)
+                
+                do {
+                    try viewContext.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nsError = error as NSError
+                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                }
+            }
         }
         
         func deleteItems(offsets: IndexSet) {

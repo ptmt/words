@@ -13,6 +13,8 @@ struct HintedText: View {
     var updatedAt: String
     @State var text: String
     @State var isEditing: Bool = false
+    var onSave: ((String, String) -> Void)?
+    var onDelete: (() -> Void)?
     
     var margin: CGFloat {
         #if os(iOS)
@@ -57,6 +59,7 @@ struct HintedText: View {
                     }
                     Button("Save") {
                         isEditing = false
+                        onSave?(title, text)
                     }
                 }
             } else {
@@ -65,8 +68,10 @@ struct HintedText: View {
                         isEditing = true
                     }
                     Button("Delete") {
-                        isEditing = true
-                    }.foregroundColor(.red)                }
+                        onDelete?()
+                    }.foregroundColor(.red)
+                    
+                }
             }
         }
     }

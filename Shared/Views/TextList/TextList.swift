@@ -11,18 +11,25 @@ import SwiftUI
 struct TextList: View {
     
     @ObservedObject var vm: ViewModel
+    
     var emptyListView: some View {
-          Text("No text, start by adding one")
-      }
+        Text("No text, start by adding one")
+    }
     
     var objectsListView: some View {
         List {
-            ForEach(vm.texts) { text in
+            ForEach(vm.texts, id: \.self) { text in
                 NavigationLink(
                     destination: HintedText(
                         title: text.title ?? "",
                         updatedAt: "just now",
-                        text: text.content ?? ""),
+                        text: text.content ?? "",
+                        onSave: { title, content in
+                            self.vm.editItem(item: text, title: title, text: content)
+                        },
+                        onDelete: {
+                            self.vm.deleteItem(item: text)
+                        }),
                     tag: text.objectID,
                     selection: $vm.selected,
                     label: {
@@ -30,9 +37,10 @@ struct TextList: View {
                     })
             }
             .onDelete(perform: vm.deleteItems)
+            .id(vm.refreshingID)
         }
         .listStyle(InsetListStyle())
-        }
+    }
     
     @ViewBuilder
     var listView: some View {
@@ -50,23 +58,23 @@ struct TextList: View {
             Image(systemName: "plus")
         }
     }
-  
+    
     
     var body: some View {
         #if os(macOS)
         listView
-        .toolbar {
-            ToolbarItemGroup(placement: .primaryAction) {
-                addButton
-                Spacer()
+            .toolbar {
+                ToolbarItemGroup(placement: .primaryAction) {
+                    addButton
+                    Spacer()
+                }
             }
-        }
-        .navigationTitle(Text("Words"))
+            .navigationTitle(Text("Texts"))
         #else
         listView.navigationBarItems(
             leading:  EditButton(),
             trailing: addButton)
-            #endif
+        #endif
     }
     
     
